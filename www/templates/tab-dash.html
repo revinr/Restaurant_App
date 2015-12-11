@@ -1,0 +1,55 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+          <div class="list">
+
+            <div class="item item-input-inset">
+              <label class="item-input-wrapper">
+                <input type="text" placeholder="Search by postcode" ng-model="my.searchText" ng-change="change(my.searchText)">
+               <!--  <input type="text" placeholder="Search by postcode" ng-model="searchText" > -->
+
+              </label>
+              <button class="button button-small">
+                Submit
+              </button>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col">
+                   <div class="card">
+                     <div class="item item-text-wrap">
+                       <h1>London:{{london}}</h1>
+                     </div>
+                   </div>
+            </div>
+            <div class="col">
+                   <div class="card">
+                     <div class="item item-text-wrap">
+                       <h1>Kent:{{Kent}}</h1>
+                     </div>
+                   </div>
+            </div>
+            <div class="col">
+                   <div class="card">
+                     <div class="item item-text-wrap">
+                       <h1>Others:{{others}}</h1>
+                     </div>
+                   </div>
+            </div>
+          </div>
+
+          <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in datalist.app | filter:my.searchText" type="item-text-wrap" href="#">
+              <img ng-src="{{item.logo}}">
+              <h2>{{item.restaurant_name}}</h2>
+              <p>{{item.address1}}, {{item.address2}}, {{item.postcode}}</p>
+              <p>{{item.city}}</p>
+              <i class="icon ion-chevron-right icon-accessory"></i>
+
+              <!-- <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                Delete
+              </ion-option-button> -->
+            </ion-item>
+          </ion-list>
+  </ion-content>
+</ion-view>
