@@ -1,5 +1,7 @@
 Restaurant APP 
 
+Author: Akhter
+
 1. Keep this project in server or any local server
 
 2. To Run this project just follow 
